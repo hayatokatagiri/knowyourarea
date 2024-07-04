@@ -41,10 +41,10 @@ area_name = df[df["CITY_NAME"] == selected_city_name]["NAME"].values[0]
 area_data = df[df["NAME"] == area_name]
 
 # 基礎データ（2020）
-st.html("<h3>基礎データ（2020）</h3>")
+st.html("<h3><center>基礎データ（2020）</center></h3>")
 # 当該地域の2020年における人口総数
 area_pop = df.loc[df["NAME"] == area_name, "人口総数20"].values[0]
-st.write('人口総数(人)：', area_pop)
+st.write('<center>人口総数(人)：' < /center >, area_pop)
 # 当該地域の2020年における65歳以上高齢化率
 area_age65 = df.loc[df["NAME"] == area_name, "高齢化率20"].values[0]
 area_age65 = round(area_age65, 2) * 100
