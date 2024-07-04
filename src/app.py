@@ -40,27 +40,27 @@ area_name = df[df["CITY_NAME"] == selected_city_name]["NAME"].values[0]
 # 入力されたエリア名に一致する行を取得
 area_data = df[df["NAME"] == area_name]
 
-# 基礎データ
+# 基礎データ（2020）
 st.html("<h3>基礎データ</h3>")
 # 当該地域の2020年における人口総数
 area_pop = df.loc[df["NAME"] == area_name, "人口総数20"].values[0]
-st.write('2020年人口総数：', area_pop)
+st.write('人口総数：', area_pop)
 # 当該地域の2020年における65歳以上高齢化率
 area_age65 = df.loc[df["NAME"] == area_name, "高齢化率20"].values[0]
 area_age65 = round(area_age65, 2)
-st.write('2020年高齢化率：', area_age65)
+st.write('高齢化率：', area_age65)
 # 第一次産業比率
 prime_indst = df.loc[df["NAME"] == area_name, "第一次産業比率20"].values[0]
 prime_indst = round(prime_indst, 2)
-st.write('2020年第一次産業比率：', prime_indst)
+st.write('第一次産業比率：', prime_indst)
 # 第二次産業比率
 second_indst = df.loc[df["NAME"] == area_name, "第二次産業比率20"].values[0]
 second_indst = round(second_indst, 2)
-st.write('2020年第二次産業比率：', second_indst)
+st.write('第二次産業比率：', second_indst)
 # 第三次産業比率
 third_indst = df.loc[df["NAME"] == area_name, "第三次産業比率20"].values[0]
 third_indst = round(third_indst, 2)
-st.write('2020年第三次産業比率：', third_indst)
+st.write('第三次産業比率：', third_indst)
 
 # 入力されたエリア名に一致する行を取得
 area_data = df[df["NAME"] == area_name]
