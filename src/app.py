@@ -47,8 +47,8 @@ area_pop = df.loc[df["NAME"] == area_name, "人口総数20"].values[0]
 st.write('人口総数：', area_pop)
 # 当該地域の2020年における65歳以上高齢化率
 area_age65 = df.loc[df["NAME"] == area_name, "高齢化率20"].values[0]
-area_age65 = round(area_age65, 2)
-st.write('高齢化率：', area_age65)
+area_age65 = round(area_age65, 2) * 100
+st.write('高齢化率(%)：', area_age65)
 # 第一次産業比率
 prime_indst = df.loc[df["NAME"] == area_name, "第一次産業比率20"].values[0]
 prime_indst = round(prime_indst, 2)
