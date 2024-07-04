@@ -157,3 +157,5 @@ st.dataframe(df)
 
 st.markdown('<p style="font-size:small; text-align:center;">(C)Hayato Katagiri All Rights Reserverd.</p>',
             unsafe_allow_html=True)
+st.markdown('<p style="font-size:small; text-align:center;">【データ出典】国勢調査小地域データ</p>',
+            unsafe_allow_html=True)
