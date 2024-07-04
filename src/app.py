@@ -15,6 +15,10 @@ df = pd.read_csv(
     "data/2020_2010_kokucho_shochiiki_tanba_sasayama_foranalysis.csv",
     encoding="cp932")
 
+# "CITYNAME"列の値が"篠山市"の行を"丹波篠山市"に置き換える
+df.loc[df["CITYNAME"] == "篠山市", "CITYNAME"] = "丹波篠山市"
+
+
 # main処理
 st.html("<h1><center>KnowYourArea</center></h1>")
 st.html("<h2><center>兵庫県丹波地域版</center></h2>")
