@@ -62,6 +62,10 @@ st.write('第二次産業比率(%)：', second_indst)
 third_indst = df.loc[df["NAME"] == area_name, "第三次産業比率20"].values[0]
 third_indst = round(third_indst, 2) * 100
 st.write('第三次産業比率(%)：', third_indst)
+# 持ち家比率
+ownhouse = df.loc[df["NAME"] == area_name, "持ち家比率20"].values[0]
+ownhouse = round(ownhouse, 2) * 100
+st.write('持ち家比率(%)：', ownhouse)
 
 # 入力されたエリア名に一致する行を取得
 area_data = df[df["NAME"] == area_name]
@@ -163,5 +167,5 @@ st.dataframe(df)
 
 st.markdown('<p style="font-size:small; text-align:center;">(C)Hayato Katagiri All Rights Reserverd.</p>',
             unsafe_allow_html=True)
-st.markdown('<p style="font-size:small; text-align:center;">【データ出典】国勢調査小地域データ</p>',
+st.markdown('<p style="font-size:small; text-align:center;">【データ出典】国勢調査小地域データ(2010年-2020年)</p>',
             unsafe_allow_html=True)
