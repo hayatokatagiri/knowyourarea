@@ -141,6 +141,3 @@ with col2:
 
 st.html("<h3><center>丹波地域国勢調査（2010-2020）</center></h3>")
 st.dataframe(df)
-x = 10
-x
-"ab"
