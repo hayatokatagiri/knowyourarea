@@ -28,7 +28,7 @@ st.html("<h2><center>兵庫県丹波地域版</center></h2>")
 
 # "CITY"列と"NAME"列を連結して新しい列"CITY_NAME"を作成
 df["CITY_NAME"] = df["CITYNAME"] + " - " + df["NAME"]
-st.write("エリア名を選択してください。")
+st.write("エリア名（自治会名）を選択してください。")
 # ユーザーにエリア名を選択させるためのプルダウンメニュー
 selected_city_name = st.selectbox("エリア名", df["CITY_NAME"].unique())
 
