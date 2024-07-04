@@ -22,6 +22,7 @@ df.loc[df["CITYNAME"] == "篠山市", "CITYNAME"] = "丹波篠山市"
 # main処理
 st.html("<h1><center>KnowYourArea</center></h1>")
 st.html("<h2><center>兵庫県丹波地域版</center></h2>")
+st.html("<center>兵庫県丹波地域（丹波篠山・丹波市）の自治会ごとの人口動態を可視化したサイトです。</h2>")
 
 # area_name = st.text_input('地域名を入力', '住山')  # area_nameに地域名が格納される
 # st.write('入力された地域名：', area_name)
@@ -48,6 +49,18 @@ st.write('2020年人口総数：', area_pop)
 area_age65 = df.loc[df["NAME"] == area_name, "高齢化率20"].values[0]
 area_age65 = round(area_age65, 2)
 st.write('2020年高齢化率：', area_age65)
+# 第一次産業比率
+prime_indst = df.loc[df["NAME"] == area_name, "第一次産業比率20"].values[0]
+prime_indst = round(prime_indst, 2)
+st.write('2020年第一次産業比率：', prime_indst)
+# 第二次産業比率
+second_indst = df.loc[df["NAME"] == area_name, "第二次産業比率20"].values[0]
+second_indst = round(second_indst, 2)
+st.write('2020年第二次産業比率：', second_indst)
+# 第三次産業比率
+third_indst = df.loc[df["NAME"] == area_name, "第三次産業比率20"].values[0]
+third_indst = round(third_indst, 2)
+st.write('2020年第三次産業比率：', third_indst)
 
 # 入力されたエリア名に一致する行を取得
 area_data = df[df["NAME"] == area_name]
