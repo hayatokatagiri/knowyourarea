@@ -39,9 +39,11 @@ area_name = df[df["CITY_NAME"] == selected_city_name]["NAME"].values[0]
 # 入力されたエリア名に一致する行を取得
 area_data = df[df["NAME"] == area_name]
 
+# 基礎データ
+st.html("<h3>基礎データ</h3>")
 # 当該地域の2020年における人口総数
 area_pop = df.loc[df["NAME"] == area_name, "人口総数20"].values[0]
-st.write('2020年高齢化率：', area_pop)
+st.write('2020年人口総数：', area_pop)
 # 当該地域の2020年における65歳以上高齢化率
 area_age65 = df.loc[df["NAME"] == area_name, "高齢化率20"].values[0]
 area_age65 = round(area_age65, 2)
@@ -103,7 +105,6 @@ ax_poptrans.plot(years, population, marker='o', linestyle='-', color='b')
 # ラベルとタイトルの設定
 ax_poptrans.set_xlabel('Year')
 ax_poptrans.set_ylabel('Population')
-ax_poptrans.set_title('Transition of Population')
 ax_poptrans.grid(True)
 
 # 高齢化率の推移
@@ -122,7 +123,6 @@ ax_aging.plot(years, aging_rates, marker='o', linestyle='-', color='g')
 # ラベルとタイトルの設定
 ax_aging.set_xlabel('Year')
 ax_aging.set_ylabel('Aging Rate (%)')
-ax_aging.set_title(f'Aging Rate Change')
 ax_aging.grid(True)
 
 # Y軸の目盛りを設定
@@ -135,8 +135,14 @@ ax_aging.set_xticks(years)
 ax_poptrans.set_xticks(years)
 
 # グラフを表示
+st.html("<h3><center>人口ピラミッド（2020）</center></h3>")
 st.pyplot(fig_pyramid)
 
+st.html("<h3><center>人口総数推移（2010-20）</center></h3>")
+st.pyplot(fig_poptrans)
+
+st.html("<h3><center>高齢化率推移（2010-2020）</center></h3>")
+st.pyplot(fig_aging)
 # グラフを横に並べて表示
 col1, col2 = st.columns(2)
 
