@@ -136,7 +136,7 @@ ax_aging.plot(years, aging_rates, marker='o', linestyle='-', color='g')
 
 # ラベルとタイトルの設定
 ax_aging.set_xlabel('Year')
-ax_aging.set_ylabel('Aging Rate (%)')
+ax_aging.set_ylabel('Aging Rate')
 ax_aging.grid(True)
 
 # Y軸の目盛りを設定
