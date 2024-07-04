@@ -79,7 +79,7 @@ else:
     # ラベルとタイトルの設定
     ax.set_xlabel('Population')
     ax.set_ylabel('Age Group')
-    ax.set_title(f'Population Pyramid')
+    # ax.set_title(f'Population Pyramid')
     ax.legend()
 
     # x軸のラベルを正の値にするための設定
