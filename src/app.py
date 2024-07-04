@@ -59,31 +59,31 @@ second_indst = round(second_indst, 2) * 100
 st.write('第二次産業比率(%)：', second_indst)
 # 第三次産業比率
 third_indst = df.loc[df["NAME"] == area_name, "第三次産業比率20"].values[0]
-third_indst = round(third_indst, 2 * 100 * 100
+third_indst = round(third_indst, 2) * 100
 st.write('第三次産業比率(%)：', third_indst)
 
 # 入力されたエリア名に一致する行を取得
-area_data=df[df["NAME"] == area_name]
+area_data = df[df["NAME"] == area_name]
 
 # 入力されたエリア名が存在しない場合の処理
 if area_data.empty:
     print(f"エリア名 '{area_name}' は存在しません。")
 else:
     # 年齢階級のリスト
-    age_groups=[
+    age_groups = [
         "0_4", "5_9", "10_14", "15_19", "20_24", "25_29", "30_34", "35_39",
         "40_44", "45_49", "50_54", "55_59", "60_64", "65_69", "70_74", "75_79",
         "80_84", "85_89", "90_94", "95_99", "over100"
     ]
 
     # 男性人口と女性人口のリスト
-    male_population=[-area_data[f"男20_{age}"].values[0]
+    male_population = [-area_data[f"男20_{age}"].values[0]
                        for age in age_groups]
-    female_population=[
+    female_population = [
         area_data[f"女20_{age}"].values[0] for age in age_groups]
 
     # プロットの設定
-    fig_pyramid, ax=plt.subplots(figsize=(10, 8))
+    fig_pyramid, ax = plt.subplots(figsize=(10, 8))
 
     # バーチャートをプロット
     ax.barh(age_groups, male_population, color='#00ced1', label='Male')
@@ -103,15 +103,15 @@ else:
 
 # 人口推移
 # 年と人口のデータ
-years=[2010, 2015, 2020]
-population=[
+years = [2010, 2015, 2020]
+population = [
     area_data["人口総数10"].values[0],
     area_data["人口総数15"].values[0],
     area_data["人口総数20"].values[0]
 ]
 
 # 折れ線グラフの設定
-fig_poptrans, ax_poptrans=plt.subplots(figsize=(10, 6))
+fig_poptrans, ax_poptrans = plt.subplots(figsize=(10, 6))
 # 折れ線グラフをプロット
 ax_poptrans.plot(years, population, marker='o', linestyle='-', color='b')
 
@@ -121,14 +121,14 @@ ax_poptrans.set_ylabel('Population')
 ax_poptrans.grid(True)
 
 # 高齢化率の推移
-aging_rates=[
+aging_rates = [
     area_data["高齢化率10"].values[0],
     area_data["高齢化率15"].values[0],
     area_data["高齢化率20"].values[0]
 ]
 
 # 折れ線グラフの設定
-fig_aging, ax_aging=plt.subplots(figsize=(10, 6))
+fig_aging, ax_aging = plt.subplots(figsize=(10, 6))
 
 # 折れ線グラフをプロット
 ax_aging.plot(years, aging_rates, marker='o', linestyle='-', color='g')
