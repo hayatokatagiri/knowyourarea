@@ -1,0 +1,3 @@
+FROM python:latest
+FROM pip install pandas
+FROM pip install streamlit
