@@ -3,7 +3,6 @@ import numpy as np
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-matplotlib.use('Agg')  # 必要に応じて、スクリプトの先頭でこの行を追加します
 
 # サーバーを立ち上げるにはターミナルで以下のコマンドを実行
 # streamlit run src/app.py
