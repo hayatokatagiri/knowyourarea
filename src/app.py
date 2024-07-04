@@ -143,14 +143,6 @@ st.pyplot(fig_poptrans)
 
 st.html("<h3><center>高齢化率推移（2010-2020）</center></h3>")
 st.pyplot(fig_aging)
-# グラフを横に並べて表示
-col1, col2 = st.columns(2)
-
-with col1:
-    st.pyplot(fig_poptrans, clear_figure=True)
-
-with col2:
-    st.pyplot(fig_aging, clear_figure=True)
 
 st.html("<h3><center>丹波地域国勢調査（2010-2020）</center></h3>")
 st.dataframe(df)
