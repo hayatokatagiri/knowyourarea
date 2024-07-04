@@ -149,5 +149,5 @@ with col2:
 st.html("<h3><center>丹波地域国勢調査（2010-2020）</center></h3>")
 st.dataframe(df)
 
-st.markdown('<p style="font-size:small; text-align:center;">(C)Hayato Katagiri</p>',
+st.markdown('<p style="font-size:small; text-align:center;">(C)Hayato Katagiri All Rights Reserverd.</p>',
             unsafe_allow_html=True)
